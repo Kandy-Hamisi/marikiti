@@ -11,12 +11,27 @@
 |
 */
 
-Route::get('/', function () {
+/*..Route::get('/', function () {
     return view('welcome');
 });
+*/
 
-Route::get('home', 'HomeController@index')->name('home');
+Route::get('/', 'FrontController@index')->name('home');
 
-Route::get('shirts', 'HomeController@shirts')->name('shirts');
+Route::get('shirts', 'FrontController@shirts')->name('shirts');
 
-Route::get('shirt', 'HomeController@shirt')->name('shirt');
+Route::get('shirt', 'FrontController@shirt')->name('shirt');
+
+Auth::routes();
+
+Route::get('logout', 'Auth\LoginController@logout');
+
+
+Route::get('/home', 'HomeController@index');
+
+
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
+    Route::get('/', function(){
+        return view('admin.index');
+    })->name('admin.index');
+});
