@@ -22,6 +22,11 @@
             {{ Form::text('description', null, array('class' => 'form-control')) }}
         </div>
 
+            <div class="form-group">
+                {{ Form::label('price', 'Price:') }}
+                {{ Form::text('price', null, array('class' => 'form-control')) }}
+            </div>
+
         <div class="form-group">
             {{ Form::label('size', 'Size:') }}
             {{ Form::select('size',['small' => 'Small', 'medium'=>'Medium','large' => 'Large'], null, ['class' =>'form-control']) }}
@@ -29,7 +34,7 @@
 
             <div class="form-group">
                 {{ Form::label('category_id', 'Category:') }}
-                {{ Form::select('category_id', [1=>'men'], null, ['class' =>'form-control', 'placeholder' => 'Select category']) }}
+                {{ Form::select('category_id', $categories, null, ['class' =>'form-control', 'placeholder' => 'Select category']) }}
             </div>
 
         <div class="form-group">

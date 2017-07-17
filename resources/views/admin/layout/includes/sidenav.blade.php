@@ -12,7 +12,21 @@
                 </a>
                 <!-- Sub menu -->
                 <ul>
-                    <li><a href="{{route('admin.index')}}">Add Product</a></li>
+                    <li><a href="{{route('product.index')}}">Products</a></li>
+                    <li><a href="{{route('product.create')}}">Add Product</a></li>
+
+                </ul>
+            </li>
+
+            <li class="submenu">
+                <a href="#">
+                    <i class="glyphicon glyphicon-list"></i> Category
+                    <span class="caret pull-right"></span>
+                </a>
+                <!-- Sub menu -->
+                <ul>
+                    <li><a href="{{route('category.index')}}">Categories</a></li>
+
                 </ul>
             </li>
         </ul>
