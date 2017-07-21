@@ -7,7 +7,7 @@
 
     <h3>Shipping Informatiom</h3>
 
-    {!! Form::open(['route'=>'checkout.shipping', 'method'=>'post']) !!}
+    {!! Form::open(['route'=>'address.store', 'method'=>'POST']) !!}
 
     <div class="form-group">
         {{ Form::label('city', 'City') }}

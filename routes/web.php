@@ -29,6 +29,7 @@ Route::get('logout', 'Auth\LoginController@logout');
 
 Route::get('/home', 'HomeController@index');
 Route::resource('/cart', 'CartController');
+Route::get('/cart/add-item/{id}', 'CartController@addItem')->name('cart.addItem');
 
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function(){
@@ -45,3 +46,5 @@ Route::resource('category', 'CategoriesController');
 Route::get('checkout', 'CheckoutController@step1');
 
 Route::get('shipping-info', 'CheckoutController@shipping')->name('checkout.shipping');
+
+Route::resource('address', 'AddressController');
