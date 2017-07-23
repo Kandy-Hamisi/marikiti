@@ -43,6 +43,8 @@ class AddressController extends Controller
 
         Auth::user()->address()->create($request->all());
 
+        return redirect()->route('checkout.payment');
+
     }
 
     /**

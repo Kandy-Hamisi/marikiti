@@ -67,7 +67,7 @@
         </tbody>
     </table>
 
-    <a href="{{url('checkout')}}" class="button">Checkout</a>
+    <a href="{{route('checkout.shipping')}}" class="button">Checkout</a>
 
     </div>
 
