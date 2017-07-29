@@ -2,7 +2,9 @@
 
 namespace App;
 
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Order extends Model
 {
@@ -11,6 +13,10 @@ class Order extends Model
     public function orderItems(){
         return $this->belongsToMany('App\Product')->withPivot('qty','total');
 
+    }
+
+    public function user(){
+        return $this->belongsTo('App\User');
     }
 
     public static function createOrder(){
